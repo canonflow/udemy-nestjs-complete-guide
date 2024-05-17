@@ -1,4 +1,5 @@
 .idea
+token.txt
 
 # Ignore all node directories
 **/node_modules/
