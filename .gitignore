@@ -1,0 +1,4 @@
+.idea
+
+# Ignore all node directories
+**/node_modules/
