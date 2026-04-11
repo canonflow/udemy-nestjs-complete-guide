@@ -1,16 +1,17 @@
-import {Body, Controller, Get, NotFoundException, Param, Post,} from '@nestjs/common';
-import {CreateMessageDto} from './dtos/create-message.dto';
-import {MessageService} from './message.service';
+import {
+  Body,
+  Controller,
+  Get,
+  NotFoundException,
+  Param,
+  Post,
+} from '@nestjs/common';
+import { CreateMessageDto } from './dtos/create-message.dto';
+import { MessageService } from './message.service';
 
 @Controller('messages')
 export class MessagesController {
-  messagesService: MessageService;
-
-  constructor() {
-    // DON'T DO THIS ON REAL APPS
-    // USE DEPENDENCY INJECTION
-    this.messagesService = new MessageService();
-  }
+  constructor(public messagesService: MessageService) {}
 
   @Get()
   listMessages() {
